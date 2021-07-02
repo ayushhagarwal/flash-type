@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../Nav/Nav";
 import Landing from "../Landing/Landing";
+import Footer from "../Footer/Footer";
 import "./App.css";
 class App extends React.Component {
   render() {
@@ -8,10 +9,9 @@ class App extends React.Component {
       <div className="App">
         <Nav />
         <Landing />
-        {/* Navbar Section */}
         {/* Landing Page */}
         {/* Challenge Sectiuon */}
-        {/* Footer Componet */}
+        <Footer />
       </div>
     );
   }
