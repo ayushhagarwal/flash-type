@@ -3,16 +3,25 @@ import "./TestContainer.css";
 import TryAgain from "../TryAgain/TryAgain";
 import TypingChallengeContainer from "../TypingChallengeContainer/TypingChallengeContainer";
 
-const TestContainer = ({ words, characters, wpm }) => {
-  const timeRemaining = 0;
+const TestContainer = ({
+  selectedParagraph,
+  words,
+  characters,
+  wpm,
+  timeRemaining,
+  timerStarted,
+}) => {
   return (
     <div className="test-container">
       {timeRemaining > 0 ? (
         <div data-aos="fade-up" className="typing-challenge-cont">
           <TypingChallengeContainer
+            selectedParagraph={selectedParagraph}
             words={words}
             characters={characters}
             wpm={wpm}
+            timeRemaining={timeRemaining}
+            timerStarted={timerStarted}
           />
         </div>
       ) : (
