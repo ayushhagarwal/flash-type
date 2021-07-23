@@ -11,6 +11,7 @@ const TestContainer = ({
   timeRemaining,
   timerStarted,
   testInfo,
+  onInputChange,
 }) => {
   return (
     <div className="test-container">
@@ -24,6 +25,7 @@ const TestContainer = ({
             timeRemaining={timeRemaining}
             timerStarted={timerStarted}
             testInfo={testInfo}
+            onInputChange={onInputChange}
           />
         </div>
       ) : (

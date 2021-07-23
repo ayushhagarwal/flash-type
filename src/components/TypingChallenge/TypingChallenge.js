@@ -3,10 +3,10 @@ import "./TypingChallenge.css";
 import TestLetter from "../TestLetter/TestLetter";
 
 const TypingChallenge = ({
-  selectedParagraph,
   timerStarted,
   timeRemaining,
   testInfo,
+  onInputChange,
 }) => {
   console.log(testInfo);
   return (
@@ -23,14 +23,20 @@ const TypingChallenge = ({
       <div className="textarea-container">
         <div className="textarea-left ">
           <div className="textarea test-paragraph">
-            {testInfo.map((individualLetterInfo) => {
-              return <TestLetter individualLetterInfo={individualLetterInfo} />;
+            {testInfo.map((individualLetterInfo, index) => {
+              return (
+                <TestLetter
+                  key={index}
+                  individualLetterInfo={individualLetterInfo}
+                />
+              );
             })}
             {/* {selectedParagraph} */}
           </div>
         </div>
         <div className="textarea-right ">
           <textarea
+            onChange={(e) => onInputChange(e.target.value)}
             className="textarea"
             placeholder="Start typing here"
           ></textarea>
